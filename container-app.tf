@@ -1,4 +1,6 @@
 resource "azapi_resource" "container_app_env" {
+  count = local.enable_container_app_env ? 1 : 0
+
   type      = "Microsoft.App/managedEnvironments@2022-03-01"
   parent_id = local.resource_group.id
   location  = local.resource_group.location
@@ -28,6 +30,8 @@ resource "azapi_resource" "container_app_env" {
 }
 
 resource "azapi_resource" "default" {
+  count = local.enable_rcontainer_app_env ? 1 : 0
+  
   type      = "Microsoft.App/containerApps@2022-03-01"
   parent_id = local.resource_group.id
   location  = local.resource_group.location

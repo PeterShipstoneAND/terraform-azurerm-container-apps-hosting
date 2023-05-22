@@ -186,6 +186,12 @@ variable "image_tag" {
   default     = "latest"
 }
 
+variable "enable_container_app_env" {
+  description = "Set to true to create a container app environment"
+  type        = bool
+  default     = false
+}
+
 variable "container_cpu" {
   description = "Number of container CPU cores"
   type        = number
