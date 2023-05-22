@@ -38,7 +38,7 @@ resource "azapi_resource" "default" {
   name      = "${local.resource_prefix}-${local.image_name}"
   body = jsonencode({
     properties : {
-      managedEnvironmentId = azapi_resource.container_app_env.id
+      managedEnvironmentId = local.enable_container_app_env ? azapi_resource.container_app_env.id : null
       configuration = {
         ingress = {
           external   = true
