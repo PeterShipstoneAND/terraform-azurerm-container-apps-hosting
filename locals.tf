@@ -51,7 +51,6 @@ locals {
   redis_cache_firewall_ipv4_allow_list = var.redis_cache_firewall_ipv4_allow_list
 
   # Container App
-  enable_container_app_env               = var.enable_container_app_env
   container_cpu                          = var.container_cpu
   container_memory                       = var.container_memory
   container_min_replicas                 = var.container_min_replicas
